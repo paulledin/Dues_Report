@@ -22,7 +22,7 @@ dbConn = st.connection("snowflake")
 ###############################################################################
 @st.cache_data
 def getCUData():
-    return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data f1 ").to_pandas())
+    return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data.core_data f1 ").to_pandas())
 
 
 ###############################################################################

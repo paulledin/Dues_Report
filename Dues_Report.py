@@ -46,7 +46,7 @@ else:
         if (selected_report_type == 'State'):
             state = ['Alabama', 'Wisconsin', 'West Virginia']
             selected_state = st.selectbox('State:', state)
-        elif ((selected_report_type == 'League'):
+        elif (selected_report_type == 'League'):
             league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
             selected_league = st.selectbox('League:', league)
         else:

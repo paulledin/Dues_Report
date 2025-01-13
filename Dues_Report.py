@@ -30,7 +30,7 @@ def getStateNames():
 
 @st.cache_data
 def getLeagueNames():
-    return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL ORDER BY league_name ").to_pandas())
+    return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' ORDER BY league_name ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App

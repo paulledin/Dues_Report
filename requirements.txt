@@ -1,0 +1,10 @@
+pip==24.0
+streamlit
+configparser
+snowflake-snowpark-python
+##snowflake-connector-python
+transformers==4.32.0
+tf-keras
+torch
+pandas
+matplotlib

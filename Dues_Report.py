@@ -20,7 +20,9 @@ dbConn = st.connection("snowflake")
 ###############################################################################
 #Function Definitions
 ###############################################################################
-
+@st.cache_data
+def getCUData():
+    return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data f1 ").to_pandas())
 
 
 ###############################################################################
@@ -43,15 +45,12 @@ else:
 
         if (selected_report_type == 'Individual CU'):
             nimble_cuna_id = st.text_input("nimble_cuna_id:", "") 
-
-
-#title = st.text_input("Movie title", "Life of Brian")
-#st.write("The current movie title is", title)
     
     col = st.columns((6, 6), gap='medium')
     with col[0]:
         if (selected_report_type == 'Individual CU'):
             st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
+            thisCU = getCUData()
         
 
     with col[1]:

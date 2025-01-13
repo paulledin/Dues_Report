@@ -198,14 +198,11 @@ else:
         report_type = ['Individual CU','State', 'League']
         selected_report_type = st.selectbox('Report Type', report_type)
     
-
-
     col = st.columns((1.5, 6.5), gap='medium')
-    with col[0]:          
-        st.markdown('#### Key Ratios')
-
-                     
-        st.markdown('---')
+    with col[0]:
+        st.markdown('#### Affiliation / Dues Report')
+        if (selected_report_type == 'Individual CU'):
+            st.markdown('---')
 
     with col[1]:
         st.markdown('---')

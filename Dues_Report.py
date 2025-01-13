@@ -21,8 +21,8 @@ dbConn = st.connection("snowflake")
 #Function Definitions
 ###############################################################################
 @st.cache_data
-def getCUData():
-    return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data.core_data f1 ").to_pandas())
+def getCUData(nimble_cuna_id):
+    return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data.core_data f1 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 
 ###############################################################################
@@ -50,7 +50,7 @@ else:
     with col[0]:
         if (selected_report_type == 'Individual CU'):
             st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
-            thisCU = getCUData()
+            thisCU = getCUData(nimble_cuna_id)
             st.write(thisCU)
         
 

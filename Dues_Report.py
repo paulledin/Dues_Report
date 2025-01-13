@@ -40,11 +40,19 @@ else:
     
         report_type = ['Individual CU','State', 'League']
         selected_report_type = st.selectbox('Report Type', report_type)
+
+        if (selected_report_type == 'Individual CU'):
+            nimble_cuna_id = st.text_input("nimble_cuna_id:", "") 
+
+
+#title = st.text_input("Movie title", "Life of Brian")
+#st.write("The current movie title is", title)
     
     col = st.columns((6, 6), gap='medium')
     with col[0]:
         if (selected_report_type == 'Individual CU'):
             st.markdown('#### Affiliation / Dues Report - Individual Credit Union')
+            
             st.markdown('---')
 
     with col[1]:

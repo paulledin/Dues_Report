@@ -53,7 +53,6 @@ else:
         if (selected_report_type == 'State'):
             selected_state = st.selectbox('State:', getStateNames())
         elif (selected_report_type == 'League'):
-            #league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
             selected_league = st.selectbox('League:', getLeagueNames())
         else:
             nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
@@ -64,7 +63,7 @@ else:
         if (selected_report_type == 'Individual CU'):
             st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
             thisCU = getCUData(nimble_cuna_id)
-            st.write(thisCU)
+            #st.write(thisCU)
         
 
     with col[1]:

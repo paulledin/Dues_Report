@@ -15,6 +15,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
+
 thePassPhrase = st.secrets["thePassPhrase"]
 dbConn = st.connection("snowflake")
 ###############################################################################

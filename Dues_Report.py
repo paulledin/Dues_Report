@@ -47,11 +47,11 @@ else:
         selected_report_type = st.selectbox('Report Type:', report_type)
 
         if (selected_report_type == 'State'):
-            states = getStates()
-            st.write(states)
+            #states = getStates()
+            #st.write(states)
             #state = ['Alabama', 'Wisconsin', 'West Virginia']
-            state = states
-            selected_state = st.selectbox('State:', state)
+            #state = states
+            selected_state = st.selectbox('State:', getStates())
         elif (selected_report_type == 'League'):
             league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
             selected_league = st.selectbox('League:', league)

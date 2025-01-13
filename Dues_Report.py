@@ -197,8 +197,8 @@ else:
     with st.sidebar:
         st.title('Dues Report')
     
-        afl_type = ['Member of CUNA and/or NAFCU','Legacy CUNA', 'Legacy NAFCU', 'Member of Both']
-        selected_afl_type = st.selectbox('Affiliation Type', afl_type)
+        report_type = ['Individual CU','State', 'League']
+        selected_report_type = st.selectbox('Report Type', report_type)
     
         group_by = ['State', 'League', 'Asset Class(9)', 'Asset Class(13)']
         selected_group_by = st.selectbox('Group By', group_by)

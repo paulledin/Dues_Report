@@ -51,7 +51,7 @@ else:
     col = st.columns((6, 6), gap='medium')
     with col[0]:
         if (selected_report_type == 'Individual CU'):
-            st.markdown('## NIMBLE_CUNA_ID: ' + nimble_cuna_id)
+            st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
         
 
     with col[1]:

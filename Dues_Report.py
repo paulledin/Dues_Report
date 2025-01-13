@@ -43,8 +43,8 @@ else:
     
     col = st.columns((1.5, 6.5), gap='medium')
     with col[0]:
-        st.markdown('#### Affiliation / Dues Report')
         if (selected_report_type == 'Individual CU'):
+            st.markdown('#### Affiliation / Dues Report - Individual Credit Union')
             st.markdown('---')
 
     with col[1]:

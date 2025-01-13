@@ -26,7 +26,7 @@ def getCUData(nimble_cuna_id):
 
 @st.cache_data
 def getStates():
-    return (dbConn.session().sql("SELECT state FROM acus_data.core_data.state_codes ").to_pandas())
+    return (dbConn.session().sql("SELECT full_name FROM acus_data.core_data.state_codes ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App

@@ -195,7 +195,7 @@ if (passphrase != thePassPhrase):
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
     with st.sidebar:
-        st.title('Affiliation Report')
+        st.title('Dues Report')
     
         afl_type = ['Member of CUNA and/or NAFCU','Legacy CUNA', 'Legacy NAFCU', 'Member of Both']
         selected_afl_type = st.selectbox('Affiliation Type', afl_type)

@@ -63,11 +63,9 @@ else:
         if (selected_report_type == 'Individual CU'):
             thisCU = getCUData(nimble_cuna_id)
             if(len(thisCU) == 0):
-                st.markdown('#### !!No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id)
+                st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')
             else:
                 st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
-                #st.write(len(thisCU))
-                #st.write(thisCU)
         
 
     with col[1]:

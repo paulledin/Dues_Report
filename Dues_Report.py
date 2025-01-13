@@ -41,7 +41,7 @@ else:
         report_type = ['Individual CU','State', 'League']
         selected_report_type = st.selectbox('Report Type', report_type)
     
-    col = st.columns((1.5, 6.5), gap='medium')
+    col = st.columns((6, 6), gap='medium')
     with col[0]:
         if (selected_report_type == 'Individual CU'):
             st.markdown('#### Affiliation / Dues Report - Individual Credit Union')

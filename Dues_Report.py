@@ -53,8 +53,8 @@ else:
         if (selected_report_type == 'State'):
             selected_state = st.selectbox('State:', getStateNames())
         elif (selected_report_type == 'League'):
-            league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
-            selected_league = st.selectbox('League:', league)
+            #league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
+            selected_league = st.selectbox('League:', getLeagueNames())
         else:
             nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
                 

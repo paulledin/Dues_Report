@@ -24,6 +24,9 @@ dbConn = st.connection("snowflake")
 def getCUData(nimble_cuna_id):
     return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data.core_data f1 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
+@st.cache_data
+def getStates():
+    return (dbConn.session().sql("SELECT state FROM acus_data.core_data.state_codes ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App
@@ -44,6 +47,8 @@ else:
         selected_report_type = st.selectbox('Report Type:', report_type)
 
         if (selected_report_type == 'State'):
+            states = getStates()
+            st.write(states)
             state = ['Alabama', 'Wisconsin', 'West Virginia']
             selected_state = st.selectbox('State:', state)
         elif (selected_report_type == 'League'):

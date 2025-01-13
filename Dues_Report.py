@@ -51,6 +51,7 @@ else:
         if (selected_report_type == 'Individual CU'):
             st.markdown('NIMBLE_CUNA_ID: ' + nimble_cuna_id)
             thisCU = getCUData()
+            st.write(thisCU)
         
 
     with col[1]:

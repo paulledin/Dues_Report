@@ -55,7 +55,7 @@ else:
         
 
     with col[1]:
-        st.markdown('---')
+
 
 
 

@@ -41,10 +41,17 @@ else:
         st.title('AFL / Dues Report')
     
         report_type = ['Individual CU','State', 'League']
-        selected_report_type = st.selectbox('Report Type', report_type)
+        selected_report_type = st.selectbox('Report Type:', report_type)
 
-        if (selected_report_type == 'Individual CU'):
-            nimble_cuna_id = st.text_input("nimble_cuna_id:", "") 
+        if (selected_report_type == 'State'):
+            state = ['Alabama', 'Wisconsin', 'West Virginia']
+            selected_state = st.selectbox('State:', state)
+        elif ((selected_report_type == 'League'):
+            league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
+            selected_league = st.selectbox('League:', league)
+        else:
+            nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "")  
+                
     
     col = st.columns((6, 6), gap='medium')
     with col[0]:

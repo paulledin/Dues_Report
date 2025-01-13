@@ -25,8 +25,12 @@ def getCUData(nimble_cuna_id):
     return (dbConn.session().sql("SELECT f1.nimble_cuna_id FROM acus_data.core_data.core_data f1 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 @st.cache_data
-def getStates():
+def getStateNames():
     return (dbConn.session().sql("SELECT full_name FROM acus_data.core_data.state_codes ").to_pandas())
+
+@st.cache_data
+def getLeagueNames():
+    return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App
@@ -47,11 +51,7 @@ else:
         selected_report_type = st.selectbox('Report Type:', report_type)
 
         if (selected_report_type == 'State'):
-            #states = getStates()
-            #st.write(states)
-            #state = ['Alabama', 'Wisconsin', 'West Virginia']
-            #state = states
-            selected_state = st.selectbox('State:', getStates())
+            selected_state = st.selectbox('State:', getStateNames())
         elif (selected_report_type == 'League'):
             league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
             selected_league = st.selectbox('League:', league)

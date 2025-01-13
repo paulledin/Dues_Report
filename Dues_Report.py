@@ -50,7 +50,7 @@ else:
             league = ['Wisconsin CU League', 'GoWest', 'New York CU League']
             selected_league = st.selectbox('League:', league)
         else:
-            nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "")  
+            nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
                 
     
     col = st.columns((6, 6), gap='medium')

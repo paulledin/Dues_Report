@@ -39,7 +39,7 @@ def getLeagueNames():
 def getCUDuesPremlimEst(nimble_cuna_id):
     return (dbConn.session().sql("SELECT status, afl, league_affiliated, nafcu_affiliated, current_members, current_assets, june_assets, num_mergers, cuna_dues_2025, nafcu_dues_2025, full_amt_2025, expected_dues, formula FROM acus_data.dues.dues_est_2025 WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
-def getLeagueNames(df):
+def expandStatus(df):
     
     return (df)
 ###############################################################################
@@ -73,7 +73,7 @@ else:
         st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
             thisCU = getCUData(nimble_cuna_id)
-            prelimDues = getCUDuesPremlimEst(nimble_cuna_id)
+            prelimDues = expandStatus(getCUDuesPremlimEst(nimble_cuna_id))
             
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')

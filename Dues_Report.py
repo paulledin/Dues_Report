@@ -63,6 +63,7 @@ else:
     
     col = st.columns((6, 6), gap='medium')
     with col[0]:
+        st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
             thisCU = getCUData(nimble_cuna_id)
             if(len(thisCU) == 0):

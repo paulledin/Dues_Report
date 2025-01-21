@@ -87,7 +87,12 @@ else:
 
                 st.markdown('**League:** ' + thisCU['LEAGUE_NAME'].loc[thisCU.index[0]])
                 st.markdown('---')
-                st.markdown('#### Preliminary Estimate:')
+                st.markdown('#### Preliminary Estimate')
+
+                st.markdown('---')
+                st.markdown('#### Q1 - Adjustments')
+
+                st.markdown('---')
     with col[1]:
         st.markdown('')
         

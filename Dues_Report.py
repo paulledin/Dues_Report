@@ -72,10 +72,6 @@ else:
                 
                 txt = "Current Members:  {members:.0f} "
                 st.markdown(txt.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
-                #st.markdown('Current Members: ' + str(thisCU['MEMBERS'].loc[thisCU.index[0]]))
-                
-                #txt = "For only {price:.2f} dollars!"
-                #print(txt.format(price = 49))
 
     
         

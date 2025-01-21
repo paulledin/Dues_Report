@@ -35,11 +35,6 @@ def getStateNames():
 def getLeagueNames():
     return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
-def format_currency(amount):
-    return '${:,.2f}'.format(amount)
-# Format a number as a currency string using defined function
-#GFG = format_currency(1234.56)
-#print(GFG)
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################

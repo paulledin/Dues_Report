@@ -36,8 +36,8 @@ def getLeagueNames():
     return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
 @st.cache_data
-def getDuesPremlimEst():
-    return (dbConn.session().sql("SELECT * FROM acus_data.dues.dues_est_2025 ").to_pandas())
+def getCUDuesPremlimEst(nimble_cuna_id):
+    return (dbConn.session().sql("SELECT * FROM acus_data.dues.dues_est_2025 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App
@@ -70,6 +70,8 @@ else:
         st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
             thisCU = getCUData(nimble_cuna_id)
+            prelimDues = getCUDuesPremlimEst(nimble_cuna_id)
+            
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')
             else:

@@ -89,6 +89,8 @@ else:
                 st.markdown('---')
                 st.markdown('#### Preliminary Estimate')
 
+                st.write(prelimDues)
+                
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')
 

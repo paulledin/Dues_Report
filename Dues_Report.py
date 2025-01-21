@@ -41,6 +41,10 @@ def getCUDuesPremlimEst(nimble_cuna_id):
 
 def expandStatus(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'
+    df.loc[df['STATUS'] == 'P', 'STATUS'] = 'Pending'
+    df.loc[df['STATUS'] == 'L', 'STATUS'] = 'Liquidated'
+    df.loc[df['STATUS'] == 'M', 'STATUS'] = 'Merged'
+    df.loc[df['STATUS'] == 'I', 'STATUS'] = 'Inactive'
     
     return (df)
 ###############################################################################

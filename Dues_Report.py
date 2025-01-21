@@ -9,12 +9,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
+import locale
 
 st.set_page_config(
     page_title="America's Credit Unions",
     layout="wide",
     initial_sidebar_state="expanded")
 
+locale.setlocale(locale.LC_ALL, 'C')
 
 thePassPhrase = st.secrets["thePassPhrase"]
 dbConn = st.connection("snowflake")
@@ -33,6 +35,11 @@ def getStateNames():
 def getLeagueNames():
     return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
+def format_currency(amount):
+    return '${:,.2f}'.format(amount)
+# Format a number as a currency string using defined function
+#GFG = format_currency(1234.56)
+#print(GFG)
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
@@ -73,7 +80,7 @@ else:
                 current_members = "Current Members:  {members:,.0f} "
                 st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
 
-                current_assets = "Current Assets:  {assets:,.0f} "
+                current_assets = "Current Assets:  ${assets:,.0f} "
                 st.markdown(current_assets.format(assets = thisCU['TOTAL_ASSETS'].loc[thisCU.index[0]]))
 
 

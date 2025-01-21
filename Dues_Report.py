@@ -71,7 +71,7 @@ else:
                 st.markdown(thisCU['ST_ADDRESS'].loc[thisCU.index[0]] + ', ' + thisCU['ST_STATE'].loc[thisCU.index[0]] + ' ' + thisCU['ST_ZIP_CODE'].loc[thisCU.index[0]])
                 
                 txt = "Current Members {members:.0f} "
-                st.markdown('Current Members: ')
+                st.markdown('Current Members: ' + txt.format(members = 49))
                 #st.markdown('Current Members: ' + str(thisCU['MEMBERS'].loc[thisCU.index[0]]))
                 
                 #txt = "For only {price:.2f} dollars!"

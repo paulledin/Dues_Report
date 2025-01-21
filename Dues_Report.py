@@ -73,8 +73,9 @@ else:
                 current_members = "Current Members:  {members:,.0f} "
                 st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
 
-    
-        
+                current_assets = "Current Assets:  {assets:,.0f} "
+                st.markdown(current_assets.format(assets = thisCU['TOTAL_ASSETS'].loc[thisCU.index[0]]))
+
 
     with col[1]:
         st.markdown('')

@@ -25,7 +25,7 @@ dbConn = st.connection("snowflake")
 ###############################################################################
 @st.cache_data
 def getCUData(nimble_cuna_id):
-    return (dbConn.session().sql("SELECT f1.nimble_cuna_id, f1.name, f1.st_address, f1.st_city, f1.st_state, f1.st_zip_code, f1.members, f1.total_assets, f1.league_name FROM acus_data.core_data.core_data f1 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
+    return (dbConn.session().sql("SELECT f1.nimble_cuna_id, f1.name, f1.st_address, f1.st_city, f1.st_state, f1.st_zip_code, f1.members, f1.total_assets, f1.league_name, f1.afl FROM acus_data.core_data.core_data f1 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 @st.cache_data
 def getStateNames():
@@ -34,6 +34,10 @@ def getStateNames():
 @st.cache_data
 def getLeagueNames():
     return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
+
+@st.cache_data
+def getDuesPremlimEst():
+    return (dbConn.session().sql("SELECT * FROM acus_data.dues.dues_est_2025 ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App

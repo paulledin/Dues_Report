@@ -114,7 +114,7 @@ else:
                 st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
                 st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
 
-                st.markdown(mergers)
+                st.write(mergers)
                 
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

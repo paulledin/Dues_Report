@@ -88,7 +88,8 @@ else:
                 st.markdown('**League:** ' + thisCU['LEAGUE_NAME'].loc[thisCU.index[0]])
                 st.markdown('---')
                 st.markdown('#### Preliminary Estimate')
-
+                st.markdown('**Status:** ' + prelimDues['STATUS'].loc[thisCU.index[0]])
+                
                 st.write(prelimDues)
                 
                 st.markdown('---')

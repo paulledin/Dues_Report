@@ -51,7 +51,9 @@ def expandFlagDescriptions(df):
 
     df.loc[df['NAFCU_AFFILIATED'] == 'A', 'NAFCU_AFFILIATED'] = 'Yes'
     df.loc[df['NAFCU_AFFILIATED'] == 'N', 'NAFCU_AFFILIATED'] = 'No'
-    
+
+    df.loc[df['LEAGUE_AFFILIATED'] == 'A', 'LEAGUE_AFFILIATED'] = 'Yes'
+    df.loc[df['LEAGUE_AFFILIATED'] == 'N', 'LEAGUE_AFFILIATED'] = 'No'
     return (df)
 ###############################################################################
 #Start building Streamlit App

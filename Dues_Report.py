@@ -70,8 +70,8 @@ else:
                 st.markdown(thisCU['NAME'].loc[thisCU.index[0]])
                 st.markdown(thisCU['ST_ADDRESS'].loc[thisCU.index[0]] + ', ' + thisCU['ST_STATE'].loc[thisCU.index[0]] + ' ' + thisCU['ST_ZIP_CODE'].loc[thisCU.index[0]])
                 
-                txt = "Current Members:  {members:,.0f} "
-                st.markdown(txt.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
+                current_members = "Current Members:  {members:,.0f} "
+                st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
 
     
         

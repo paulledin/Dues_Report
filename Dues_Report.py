@@ -48,6 +48,9 @@ def expandFlagDescriptions(df):
 
     df.loc[df['AFL'] == 'A', 'AFL'] = 'Yes'
     df.loc[df['AFL'] == 'N', 'AFL'] = 'No'
+
+    df.loc[df['NAFCU_AFFILIATED'] == 'A', 'NAFCU_AFFILIATED'] = 'Yes'
+    df.loc[df['NAFCU_AFFILIATED'] == 'N', 'NAFCU_AFFILIATED'] = 'No'
     
     return (df)
 ###############################################################################

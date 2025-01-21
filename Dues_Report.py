@@ -37,7 +37,7 @@ def getLeagueNames():
 
 @st.cache_data
 def getCUDuesPremlimEst(nimble_cuna_id):
-    return (dbConn.session().sql("SELECT * FROM acus_data.dues.dues_est_2025 WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
+    return (dbConn.session().sql("SELECT * FROM acus_data.dues.dues_est_2025 WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 ###############################################################################
 #Start building Streamlit App

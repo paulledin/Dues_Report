@@ -45,6 +45,9 @@ def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'L', 'STATUS'] = 'Liquidated'
     df.loc[df['STATUS'] == 'M', 'STATUS'] = 'Merged'
     df.loc[df['STATUS'] == 'I', 'STATUS'] = 'Inactive'
+
+    df.loc[df['AFL'] == 'A', 'AFL'] = 'Yes'
+    df.loc[df['AFL'] == 'N', 'AFL'] = 'No'
     
     return (df)
 ###############################################################################

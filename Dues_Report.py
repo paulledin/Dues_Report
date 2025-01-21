@@ -66,7 +66,7 @@ else:
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')
             else:
-                st.markdown('NIMBLE_CUNA_ID: ' + thisCU[0, 0])
+                st.markdown('NIMBLE_CUNA_ID: ' + thisCU['nimble_cuna_id'].loc[thisCU[0]])
                 st.markdown('Name: ')
         
 

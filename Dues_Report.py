@@ -43,6 +43,10 @@ def getCUDuesPremlimEst(nimble_cuna_id):
 def getMergers(survivor_id):
     return (dbConn.session().sql("SELECT nimble_cuna_id, name, st_state, merger_date FROM acus_data.core_data.core_data WHERE merger_date>='2023-03-31' AND merger_date<='2024-03-31' AND survivor_id='" + survivor_id + "' ").to_pandas())
 
+@st.cache_data
+def getPreviousDues(year):
+    return (dbConn.session().sql("SELECT nimble_cuna_id, full_amt_2024_with5pct_cap FROM CUNA_DUES_2024 ").to_pandas())
+
 def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'
     df.loc[df['STATUS'] == 'P', 'STATUS'] = 'Pending'

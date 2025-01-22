@@ -124,13 +124,15 @@ else:
                 june_assets = "**June 2024 Assets:**  ${assets:,.0f} "
                 st.markdown(june_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
                 
-                cuna_dues = "**2024 Legacy CUNA Dues:**  ${dues:,.0f} "
+                cuna_dues = "**2025 Legacy CUNA Dues Est:**  ${dues:,.0f} "
                 st.markdown(cuna_dues.format(dues = prelimDues['CUNA_DUES_2025'].loc[prelimDues.index[0]]))
-                nafcu_dues = "**2024 Legacy NAFCU Dues:**  ${dues:,.0f} "
+                nafcu_dues = "**2025 Legacy NAFCU Dues Est:**  ${dues:,.0f} "
                 st.markdown(nafcu_dues.format(dues = prelimDues['NAFCU_DUES_2025'].loc[prelimDues.index[0]]))
 
                 st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
-                st.markdown('**2025 Full Dues Amount:** ' + prelimDues['FULL_AMT_2025'].loc[thisCU.index[0]])
+                
+                full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
+                st.markdown(cuna_dues.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
 
                 

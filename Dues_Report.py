@@ -122,7 +122,7 @@ else:
                 current_assets = "**March 2024 Assets:**  ${assets:,.0f} "
                 st.markdown(current_assets.format(assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
                 june_assets = "**June 2024 Assets:**  ${assets:,.0f} "
-                st.markdown(current_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
+                st.markdown(june_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
                 st.write(mergers)
                 
                 st.markdown('---')

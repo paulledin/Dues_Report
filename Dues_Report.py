@@ -132,7 +132,7 @@ else:
                 st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
                 
                 full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
-                st.markdown(cuna_dues.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
+                st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
 
                 

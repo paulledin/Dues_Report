@@ -130,6 +130,7 @@ else:
                 st.markdown(nafcu_dues.format(dues = prelimDues['NAFCU_DUES_2025'].loc[prelimDues.index[0]]))
 
                 st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
+                st.markdown('**2025 Full Dues Amount:** ' + prelimDues['FULL_AMT_2025'].loc[thisCU.index[0]])
 
 
                 

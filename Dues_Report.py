@@ -137,7 +137,6 @@ else:
                 expected = "**2025 Expected Dues:**  ${dues:,.0f} "
                 st.markdown(expected.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
-                
                 mergers = "**Mar 2023 - Mar 2024 Mergers:**  ${mergers:,.0f} "
                 st.markdown(mergers.format(mergers = prelimDues['NUM_MERGERS'].loc[prelimDues.index[0]]))
 

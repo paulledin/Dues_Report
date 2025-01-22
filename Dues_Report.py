@@ -154,8 +154,6 @@ else:
 
                 st.markdown("**Merger Detail:**")
                 st.write(mergers)
-
-                st.write(prevCUNADues)
                 
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

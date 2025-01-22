@@ -72,7 +72,7 @@ if (passphrase != thePassPhrase):
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
     with st.sidebar:
-        st.title('AFL / Dues Report')
+        st.title('Dues Report')
     
         report_type = ['Individual CU','State', 'League']
         selected_report_type = st.selectbox('Report Type:', report_type)

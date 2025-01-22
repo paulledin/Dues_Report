@@ -96,6 +96,7 @@ else:
             thisCU = expandFlagDescriptions(getCUData(nimble_cuna_id))
             prelimDues = expandFlagDescriptions(getCUDuesPremlimEst(nimble_cuna_id))
             mergers = getMergers(nimble_cuna_id)
+            prevCUNADues = getPreviousDues('2024')
             
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')
@@ -147,6 +148,8 @@ else:
 
                 st.markdown("**Merger Detail:**")
                 st.write(mergers)
+
+                st.write(prevCUNADues)
                 
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

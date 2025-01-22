@@ -117,9 +117,9 @@ else:
                 st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
                 st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
 
-                current_members = "**Current Members:**  {members:,.0f} "
+                current_members = "**March 2024 Members:**  {members:,.0f} "
                 st.markdown(current_members.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]))
-                current_assets = "**Current Assets:**  ${assets:,.0f} "
+                current_assets = "**March 2024 Assets:**  ${assets:,.0f} "
                 st.markdown(current_assets.format(assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
                 st.write(mergers)
                 

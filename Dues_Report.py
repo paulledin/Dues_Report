@@ -89,7 +89,7 @@ else:
     with col[0]:
         st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
-            thisCU = getCUData(nimble_cuna_id)
+            thisCU = expandFlagDescriptions(getCUData(nimble_cuna_id))
             prelimDues = expandFlagDescriptions(getCUDuesPremlimEst(nimble_cuna_id))
             mergers = getMergers(nimble_cuna_id)
             

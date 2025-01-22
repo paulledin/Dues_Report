@@ -41,7 +41,7 @@ def getCUDuesPremlimEst(nimble_cuna_id):
 
 @st.cache_data
 def getMergers(survivor_id):
-    return (dbConn.session().sql("SELECT nimble_cuna_id, name, st_state, survivor_id, merger_date FROM acus_data.core_data.core_data WHERE merger_date>='2023-03-31' AND merger_date<='2024-03-31' AND survivor_id='" + survivor_id + "' ").to_pandas())
+    return (dbConn.session().sql("SELECT nimble_cuna_id, name, st_state, merger_date FROM acus_data.core_data.core_data WHERE merger_date>='2023-03-31' AND merger_date<='2024-03-31' AND survivor_id='" + survivor_id + "' ").to_pandas())
 
 def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'

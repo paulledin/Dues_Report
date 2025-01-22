@@ -129,6 +129,8 @@ else:
                 nafcu_dues = "**2024 Legacy NAFCU Dues:**  ${dues:,.0f} "
                 st.markdown(nafcu_dues.format(dues = prelimDues['NAFCU_DUES_2025'].loc[prelimDues.index[0]]))
 
+                 st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
+
 
                 
                 st.write(mergers)

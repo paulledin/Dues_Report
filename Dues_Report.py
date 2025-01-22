@@ -106,6 +106,7 @@ else:
             mergers = mergers.merge(march_2023_cuFins, how='left', on='NIMBLE_CUNA_ID')
             mergers = mergers.merge(prevCUNADues, how='left', on='NIMBLE_CUNA_ID')
             mergers["mergee_dues_2024"] = (mergers["MEMBERS"] * 0.12) + (mergers["TOTAL_ASSETS"] * 0.000018)
+            mergers.loc[mergers['TOTAL_ASSETS'] < 5000000, 'mergee_dues_2024'] = mergers["mergee_dues_2024"] / 2
              
             
             if(len(thisCU) == 0):

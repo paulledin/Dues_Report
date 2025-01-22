@@ -105,6 +105,9 @@ else:
                 st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
                 current_assets = "**Current Assets:**  ${assets:,.0f} "
                 st.markdown(current_assets.format(assets = thisCU['TOTAL_ASSETS'].loc[thisCU.index[0]]))
+                st.markdown('**Current Status:** ' + thisCU['STATUS'].loc[thisCU.index[0]])
+
+                
 
                 st.markdown('**League:** ' + thisCU['LEAGUE_NAME'].loc[thisCU.index[0]])
                 st.markdown('---')
@@ -113,6 +116,11 @@ else:
                 st.markdown('**Legacy CUNA Affiliated:** ' + prelimDues['AFL'].loc[thisCU.index[0]])
                 st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
                 st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
+
+                current_members = "**Current Members:**  {members:,.0f} "
+                st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))
+                current_assets = "**Current Assets:**  ${assets:,.0f} "
+                st.markdown(current_assets.format(assets = thisCU['TOTAL_ASSETS'].loc[thisCU.index[0]]))
 
                 st.write(mergers)
                 

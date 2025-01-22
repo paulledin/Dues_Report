@@ -100,10 +100,11 @@ else:
             thisCU = expandFlagDescriptions(getCUData(nimble_cuna_id))
             prelimDues = expandFlagDescriptions(getCUDuesPremlimEst(nimble_cuna_id))
             mergers = getMergers(nimble_cuna_id)
-            prevCUNADues = getPreviousDues('2024')
+            prevCUNADues = getPreviousDues('2023')
             march_2023_cuFins = getMembersAndAssets('202303')
 
             mergers = mergers.merge(march_2023_cuFins, how='left', on='NIMBLE_CUNA_ID')
+            mergers = mergers.merge(prevCUNADues, how='left', on='NIMBLE_CUNA_ID')
              
             
             if(len(thisCU) == 0):

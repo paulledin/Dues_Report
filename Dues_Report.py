@@ -47,6 +47,10 @@ def getMergers(survivor_id):
 def getPreviousDues(year):
     return (dbConn.session().sql("SELECT nimble_cuna_id, full_amt_" + year + "_with5pct_cap AS \"DUES_2024\" FROM acus_data.dues.CUNA_DUES_" + year).to_pandas())
 
+@st.cache_data
+def getMembersAndAssets(period):
+    return (dbConn.session().sql("SELECT nimble_cuna_id, members, total_assets FROM acus_data.ncua_data.cuFinancials_" + period).to_pandas())
+
 def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'
     df.loc[df['STATUS'] == 'P', 'STATUS'] = 'Pending'

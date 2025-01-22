@@ -120,8 +120,6 @@ else:
                 st.markdown(current_assets.format(assets = thisCU['TOTAL_ASSETS'].loc[thisCU.index[0]]))
                 st.markdown('**Current Status:** ' + thisCU['STATUS'].loc[thisCU.index[0]])
 
-                
-
                 st.markdown('**League:** ' + thisCU['LEAGUE_NAME'].loc[thisCU.index[0]])
                 st.markdown('---')
                 st.markdown('#### Preliminary Estimate')

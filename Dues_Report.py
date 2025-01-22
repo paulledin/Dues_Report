@@ -134,6 +134,9 @@ else:
                 full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
                 st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
+                expected = "**2025 Expected Dues:**  ${dues:,.0f} "
+                st.markdown(expected.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
+
 
                 
                 st.write(mergers)

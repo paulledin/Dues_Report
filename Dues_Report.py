@@ -140,7 +140,7 @@ else:
                 num_mergers = "**Mar 2023 - Mar 2024 Mergers:**  {mergers:,.0f} "
                 st.markdown(num_mergers.format(mergers = prelimDues['NUM_MERGERS'].loc[prelimDues.index[0]]))
 
-                st.markdown("**Merger Detail:")
+                st.markdown("**Merger Detail:**")
                 st.write(mergers)
                 
                 st.markdown('---')

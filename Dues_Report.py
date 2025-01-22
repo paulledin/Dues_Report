@@ -123,6 +123,11 @@ else:
                 st.markdown(current_assets.format(assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
                 june_assets = "**June 2024 Assets:**  ${assets:,.0f} "
                 st.markdown(june_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
+                cuna_dues = "**2024 Legacy CUNA Dues:**  ${dues:,.0f} "
+                st.markdown(cuna_dues.format(dues = prelimDues['CUNA_DUES_2025'].loc[prelimDues.index[0]]))
+
+
+                
                 st.write(mergers)
                 
                 st.markdown('---')

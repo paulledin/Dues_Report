@@ -164,7 +164,7 @@ else:
                 st.markdown("**Merger Detail:**")
                 st.write(mergers)
 
-                st.markdown("**Legacy CUNA Cap Calculation:**")
+                st.markdown("**Legacy CUNA Calculation:**")
 
                 dues_calc = round((prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12) + (prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] *  0.000018), 0)
 

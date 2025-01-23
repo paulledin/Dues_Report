@@ -101,10 +101,10 @@ else:
             prelimDues = expandFlagDescriptions(getCUDuesPremlimEst(nimble_cuna_id))
             mergers = getMergers(nimble_cuna_id)
             cunaDues2024 = getPreviousDues('2024')
+            thisCU = thisCU.merge(cunaDues2024, how='left', on='NIMBLE_CUNA_ID')
 
             cunaDues2023 = getPreviousDues('2023')
             march_2023_cuFins = getMembersAndAssets('202303')
-
             mergers = mergers.merge(march_2023_cuFins, how='left', on='NIMBLE_CUNA_ID')
             mergers = mergers.merge(cunaDues2023, how='left', on='NIMBLE_CUNA_ID')
             mergers["Dues_2024"] = (mergers["MEMBERS"] * 0.12) + (mergers["TOTAL_ASSETS"] * 0.000018)

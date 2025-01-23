@@ -108,9 +108,8 @@ else:
             mergers["mergee_dues_2024"] = (mergers["MEMBERS"] * 0.12) + (mergers["TOTAL_ASSETS"] * 0.000018)
             mergers.loc[mergers['TOTAL_ASSETS'] < 5000000, 'mergee_dues_2024'] = mergers["mergee_dues_2024"] / 2
             mergers["prev_year_diff"] = (mergers["mergee_dues_2024"] - mergers["DUES_2023"]) / mergers["DUES_2023"]   
-            #mergers.loc[mergers['prev_year_diff'] > 0.05, 'mergee_dues_2024'] = mergers["dues_2023"] * 1.05
-
-             
+            mergers.loc[mergers['prev_year_diff'] > 0.05, 'mergee_dues_2024'] = mergers["dues_2023"] * 1.05
+ 
             
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')

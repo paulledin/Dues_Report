@@ -105,11 +105,11 @@ else:
 
             mergers = mergers.merge(march_2023_cuFins, how='left', on='NIMBLE_CUNA_ID')
             mergers = mergers.merge(prevCUNADues, how='left', on='NIMBLE_CUNA_ID')
-            mergers["mergee_dues_2024"] = (mergers["MEMBERS"] * 0.12) + (mergers["TOTAL_ASSETS"] * 0.000018)
-            mergers.loc[mergers['TOTAL_ASSETS'] < 5000000, 'mergee_dues_2024'] = mergers["mergee_dues_2024"] / 2
-            mergers["prev_year_diff"] = (mergers["mergee_dues_2024"] - mergers["DUES_2023"]) / mergers["DUES_2023"]   
-            mergers.loc[mergers['prev_year_diff'] > 0.05, 'mergee_dues_2024'] = mergers["DUES_2023"] * 1.05
-            mergers["mergee_dues_2024"] = round(mergers["mergee_dues_2024"], 0)
+            mergers["DUES_2024"] = (mergers["MEMBERS"] * 0.12) + (mergers["TOTAL_ASSETS"] * 0.000018)
+            mergers.loc[mergers['TOTAL_ASSETS'] < 5000000, 'DUES_2024'] = mergers["DUES_2024"] / 2
+            mergers["prev_year_diff"] = (mergers["DUES_2024"] - mergers["DUES_2023"]) / mergers["DUES_2023"]   
+            mergers.loc[mergers['prev_year_diff'] > 0.05, 'DUES_2024'] = mergers["DUES_2023"] * 1.05
+            mergers["DUES_2024"] = round(mergers["DUES_2024"], 0)
             mergers.drop(['prev_year_diff', 'MEMBERS', 'TOTAL_ASSETS', 'DUES_2023'], axis=1, inplace = True)
  
             

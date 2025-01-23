@@ -166,8 +166,8 @@ else:
 
                 st.markdown("**Legacy CUNA Cap Calculation:**")
 
-                cuna_cap_calc = "{members:,.0f} * 0.12 + Assets * 0.000018)"
-                st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]))
+                cuna_cap_calc = "{members:,.0f} * 0.12( + ${assets:,.0f} * 0.000018)"
+                st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]), assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

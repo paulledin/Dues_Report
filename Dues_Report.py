@@ -161,6 +161,8 @@ else:
 
                 st.markdown("**Merger Detail:**")
                 st.write(mergers)
+
+                st.markdown("**Legacy CUNA Cap Calculation:**")
                 
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

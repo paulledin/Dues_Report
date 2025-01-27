@@ -71,6 +71,7 @@ def expandFlagDescriptions(df):
     df.loc[df['LEAGUE_AFFILIATED'] == 'A', 'LEAGUE_AFFILIATED'] = 'Yes'
     df.loc[df['LEAGUE_AFFILIATED'] == 'N', 'LEAGUE_AFFILIATED'] = 'No'
     return (df)
+
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
@@ -97,7 +98,7 @@ else:
             nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
                 
     
-    col = st.columns((6, 2), gap='medium')
+    col = st.columns((9, 1), gap='medium')
     with col[0]:
         st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
@@ -212,6 +213,8 @@ else:
                 st.write(q1_adjs)
 
                 st.markdown('---')
+        elif (selected_report_type == 'State'):
+            st.markdown("**Coming Soon!!!**")
     with col[1]:
         st.markdown('')
         

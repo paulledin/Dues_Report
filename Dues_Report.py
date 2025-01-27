@@ -173,7 +173,7 @@ else:
                 st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]], assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
                 previous_yr_dues = "Previous Years Dues =  ${prev_dues:,.0f} "
-                st.markdown(previous_yr_dues.format(prev_dues = cunaDues2024['Dues_2024'].loc[cunaDues2024.index[0]))
+                st.markdown(previous_yr_dues.format(prev_dues = cunaDues2024['Dues_2024'].loc[cunaDues2024.index[0])
 
                 #cunaDues2024
              

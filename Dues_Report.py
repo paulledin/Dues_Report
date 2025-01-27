@@ -186,6 +186,9 @@ else:
 
                 if ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 < dues_calc):   
                     st.write("Use Cap")
+                else:
+                    st.write("No Cap")
+
 
 
              

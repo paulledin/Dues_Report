@@ -187,6 +187,9 @@ else:
                 if ( 5000 < dues_calc ):
 		    st.write("Use Cap")	
 
+		
+        	if (5 < 10):
+            		st.write("Yo")
 
 
              

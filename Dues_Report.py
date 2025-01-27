@@ -167,6 +167,9 @@ else:
                 st.markdown("**Legacy CUNA Calculation:**")
 
                 dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
+                if(dues_calc > 322131):
+                    dues_calc = 322131
+
                 dues_by_formula = "Est Dues based on forumula =  ${dues:,.0f} "
                 st.markdown(dues_by_formula.format(dues = dues_calc))
                 cuna_cap_calc = "- ({members:,.0f} * 0.12) + (${assets:,.0f} * 0.000018) "

@@ -178,8 +178,8 @@ else:
                 mergee_dues = "- Previous Years Dues from Mergers = ${mergee_dues:,.0f} "
                 st.markdown(mergee_dues.format(mergee_dues = sum(mergers['Dues_2024'])))
 
-                mergee_dues = "- Previous Years Dues Incl. Mergers = ${mergee_dues:,.0f} "
-                st.markdown(mergee_dues.format(mergee_dues = sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024'])))
+                total_dues = "- Previous Years Dues Incl. Mergers = ${total_dues:,.0f} "
+                st.markdown(total_dues.format(total_dues = sum(mergers['Dues_2024']) + thisCU['Dues_2024']))
              
 
 

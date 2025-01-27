@@ -168,12 +168,14 @@ else:
 
                 dues_calc = round((prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12) + (prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] *  0.000018), 0)
 
+                dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
+             
                 cuna_cap_calc = "({members:,.0f} * 0.12) + (${assets:,.0f} * 0.000018) = "
                 st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]], assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
                 txt = "Dues Dollars ==  ${dues:,.0f} dollars!"
 
-                dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
+                
 
                 #prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12)
                 st.markdown(txt.format(dues = dues_calc))

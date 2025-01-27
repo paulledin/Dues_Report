@@ -166,7 +166,8 @@ else:
 
                 st.markdown("**Legacy CUNA Calculation:**")
 
-                dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
+                dues_calc = round(prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12, 0)
+                
                 if(dues_calc > 322131):
                     dues_calc = 322131
 

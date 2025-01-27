@@ -167,7 +167,7 @@ else:
                 st.markdown("**Legacy CUNA Calculation:**")
 
                 dues_calc = round(prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12, 0)
-                
+
                 if(dues_calc > 322131):
                     dues_calc = 322131
 
@@ -188,7 +188,9 @@ else:
                 plus_5_pct = "- Previous Years Dues Incl. Mergers x 1.05 = ${plus_5_pct:,.0f} "
                 st.markdown(plus_5_pct.format(plus_5_pct = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
 
-                if ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 <= dues_calc):   
+                if (dues_calc == 322131):
+                    st.write("**Credit Union is Capped Out at $322,131.**")
+                elif ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 <= dues_calc):   
                     st.write("**Formula Calculated Amount is >= 5 pecent of Last Year's Full Amount.**")
                 else:
                     st.write("**Formula Calculated Amount is <= 5 pecent of Last Year's Full Amount.**")

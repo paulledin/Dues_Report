@@ -214,7 +214,10 @@ else:
 
                 st.markdown('---')
         elif (selected_report_type == 'State'):
-            st.markdown("**Coming Soon!!!**")
+            st.markdown("**State Reports Coming Soon!!!**")
+        else:
+            st.markdown("**League Reports Coming Soon!!!**")
+
     with col[1]:
         st.markdown('')
         

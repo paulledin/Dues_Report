@@ -167,13 +167,15 @@ else:
                 st.markdown("**Legacy CUNA Calculation:**")
 
                 dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
-                txt = "Est Dues based on forumula =  ${dues:,.0f} "
-                st.markdown(txt.format(dues = dues_calc))
+                dues_by_formula = "Est Dues based on forumula =  ${dues:,.0f} "
+                st.markdown(dues_by_formula.format(dues = dues_calc))
                 cuna_cap_calc = "- ({members:,.0f} * 0.12) + (${assets:,.0f} * 0.000018) "
                 st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]], assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
-                txt = "Previous Years Dues =  ${prev_dues:,.0f} "
+                previous_yr_dues = "Previous Years Dues =  ${prev_dues:,.0f} "
+                #st.markdown(previous_yr_dues.format(prev_dues = prelimDues['Dues_2024'].loc[prelimDues.index[0]))
 
+                #cunaDues2024
              
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

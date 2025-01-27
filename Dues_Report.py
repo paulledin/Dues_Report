@@ -52,7 +52,7 @@ def getMembersAndAssets(period):
     return (dbConn.session().sql("SELECT nimble_cuna_id, members, total_assets FROM acus_data.ncua_data.cuFinancials_" + period).to_pandas())
 
 @st.cache_data
-def getQtrAdjustements(year, quarter):
+def getQtrAdjustements(year, quarter, nimble_cuna_id):
     return (dbConn.session().sql("SELECT nimble_cuna_id FROM acus_data.dues.dues_est_" + year + "_Q" + quarter +  " WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 def expandFlagDescriptions(df):

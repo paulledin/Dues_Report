@@ -175,6 +175,7 @@ else:
                 previous_yr_dues = "Previous Years Dues =  ${prev_dues:,.0f} "
                 st.markdown(previous_yr_dues.format(prev_dues = thisCU['Dues_2024'].loc[thisCU.index[0]]))
 
+                sum_mergee_dues = sum(mergers['Dues_2024']
                 mergee_dues = "- ${mergee_dues:,.0f} "
              
 

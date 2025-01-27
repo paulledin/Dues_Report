@@ -174,7 +174,12 @@ else:
 
                 previous_yr_dues = "Previous Years Dues =  ${prev_dues:,.0f} "
                 st.markdown(previous_yr_dues.format(prev_dues = thisCU['Dues_2024'].loc[thisCU.index[0]]))
+
+                mergee_dues = "- ${mergee_dues:,.0f} "
              
+
+
+
              
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

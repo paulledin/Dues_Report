@@ -93,7 +93,7 @@ else:
             nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
                 
     
-    col = st.columns((6, 6), gap='medium')
+    col = st.columns((6, 2), gap='medium')
     with col[0]:
         st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
@@ -189,13 +189,13 @@ else:
                 st.markdown(plus_5_pct.format(plus_5_pct = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
 
                 if (dues_calc == 322131):
-                    st.write("**Credit Union is at the Dues Cap of $322,131.**")
+                    st.write("**=> Credit Union is at the Dues Cap of $322,131.**")
                 elif ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 <= dues_calc):   
-                    st.write("**Formula Calculated Amount is >= 5 pecent of Last Year's Full Amount.**")
+                    st.write("**=> Formula Calculated Amount is >= 5 pecent of Last Year's Full Amount.**")
                     full_amt = "**=> Legacy CUNA 2025 Full Amount:**  ${dues:,.0f} "
                     st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
                 else:
-                    st.write("**Formula Calculated Amount is <= 5 pecent of Last Year's Full Amount.**")
+                    st.write("**=> Formula Calculated Amount is <= 5 pecent of Last Year's Full Amount.**")
                     full_amt = "**=> 2025 Legacy CUNA Full Amount:**  ${dues:,.0f} "
                     st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 

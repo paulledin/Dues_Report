@@ -192,11 +192,11 @@ else:
                     st.write("**Credit Union is at the Dues Cap of $322,131.**")
                 elif ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 <= dues_calc):   
                     st.write("**Formula Calculated Amount is >= 5 pecent of Last Year's Full Amount.**")
-                    full_amt = "**=> 2025 Full Amount:**  ${dues:,.0f} "
+                    full_amt = "**=> Legacy CUNA 2025 Full Amount:**  ${dues:,.0f} "
                     st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
                 else:
                     st.write("**Formula Calculated Amount is <= 5 pecent of Last Year's Full Amount.**")
-                    full_amt = "**=> 2025 Full Amount:**  ${dues:,.0f} "
+                    full_amt = "**=> 2025 Legacy CUNA Full Amount:**  ${dues:,.0f} "
                     st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
 

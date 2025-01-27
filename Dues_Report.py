@@ -53,7 +53,7 @@ def getMembersAndAssets(period):
 
 @st.cache_data
 def getQtrAdjustements(year, quarter, nimble_cuna_id):
-    return (dbConn.session().sql("SELECT nimble_cuna_id, name AS \"Name\", status AS \"Status\", afl AS \"AFL\", league_affiliated AS \"LG AFL\", full_amt_2025 AS \"Dues 2025\", expected_2025 AS \"Expected\", collected_2025 AS \"Collected\", reafl_100pct AS \"Re-AFL 100%\" FROM acus_data.dues.dues_est_" + year + "_Q" + quarter +  " WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
+    return (dbConn.session().sql("SELECT nimble_cuna_id, name AS \"Name\", status AS \"Status\", afl AS \"AFL\", league_affiliated AS \"LG AFL\", full_amt_2025 AS \"Dues 2025\", expected_2025 AS \"Expected\", collected_2025 AS \"Collected\", reafl_100pct AS \"Re-AFL 100%\", reafl_partial AS \"Re-AFL Partial\", disafl as \"Dis-AFL\" FROM acus_data.dues.dues_est_" + year + "_Q" + quarter +  " WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'

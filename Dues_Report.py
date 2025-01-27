@@ -176,7 +176,7 @@ else:
                 dues_calc = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12
 
                 #prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12)
-                st.markdown(txt.format(dues = dues_calc)
+                st.markdown(txt.format(dues = dues_calc))
                 #st.markdown(txt.format(price = 49)) 
 
 

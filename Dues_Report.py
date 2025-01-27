@@ -177,7 +177,7 @@ else:
 
                 sum_mergee_dues = sum(mergers['Dues_2024'])
                 mergee_dues = "- Previous Years Dues from Mergers = ${mergee_dues:,.0f} "
-                st.markdown(mergee_dues.format(mergee_dues = sum_mergee_dues))
+                st.markdown(mergee_dues.format(mergee_dues = sum(mergers['Dues_2024'])))
              
 
 

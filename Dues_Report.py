@@ -184,7 +184,7 @@ else:
                 plus_5_pct = "- Previous Years Dues Incl. Mergers x 1.05 = ${plus_5_pct:,.0f} "
                 st.markdown(plus_5_pct.format(plus_5_pct = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
 
-                if ( (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05) < dues_calc) ):
+                if ( (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05) < dues_calc)) ):
 		    st.write("Use Cap")	
                	 
 

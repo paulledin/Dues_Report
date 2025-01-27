@@ -188,8 +188,8 @@ else:
 		#    st.write("Use Cap")	
 
 		
-        	if (5 < 10):
-                st.write("Yo")
+        	#if (5 < 10):
+                #st.write("Yo")
 
 
              

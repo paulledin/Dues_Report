@@ -6,7 +6,7 @@ Created on Mon Jul 29 13:40:15 2024
 """
 
 import streamlit as st
-import pandas as pdhttps://github.com/paulledin/Dues_Report/blob/main/Dues_Report.py
+import pandas as pd
 import numpy as np
 import altair as alt
 import locale

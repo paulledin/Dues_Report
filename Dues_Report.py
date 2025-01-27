@@ -187,11 +187,11 @@ else:
                 if ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 < dues_calc):   
                     st.write("Use Cap")
                     use_cap_amt = "${calculated:,.0f} >  ${cap:,.0f} "
-                    st.markdown(mergee_dues.format(calculated = dues_calc, cap = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
+                    st.markdown(mergee_dues.format(calculated = dues_calc, cap = 5000))
                 else:
                     st.write("No Cap")
                     use_cap_amt = "${calculated:,.0f} <  ${cap:,.0f} "
-                    st.markdown(mergee_dues.format(calculated = dues_calc, cap = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
+                    st.markdown(mergee_dues.format(calculated = dues_calc, cap = 5000))
 
 
 

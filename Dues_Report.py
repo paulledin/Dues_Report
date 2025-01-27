@@ -184,12 +184,12 @@ else:
                 plus_5_pct = "- Previous Years Dues Incl. Mergers x 1.05 = ${plus_5_pct:,.0f} "
                 st.markdown(plus_5_pct.format(plus_5_pct = (sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05))
 
-                if ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 < dues_calc):   
-                    st.write("**Formula Calculated Exceeds 5 pecent of Last Year's Full Amount.**")
+                if ((sum(mergers['Dues_2024']) + sum(thisCU['Dues_2024']))*1.05 <= dues_calc):   
+                    st.write("**Formula Calculated Amount is >= 5 pecent of Last Year's Full Amount.**")
                 else:
-                    st.write("**Formula Calculated Amount is < 5 pecent of Last Year's Full Amount.**")
+                    st.write("**Formula Calculated Amount is <= 5 pecent of Last Year's Full Amount.**")
 
-                full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
+                full_amt = "**=> 2025 Full Amount:**  ${dues:,.0f} "
                 st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
                 st.markdown('---')

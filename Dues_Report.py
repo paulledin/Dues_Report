@@ -172,7 +172,10 @@ else:
                 st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]], assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
                 txt = "For only ${price:.0f} dollars!"
-                st.markdown(txt.format(price = 49)) 
+
+                #prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12)
+                st.markdown(txt.format(price = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018)))
+                #st.markdown(txt.format(price = 49)) 
 
 
 

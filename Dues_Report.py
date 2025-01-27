@@ -53,7 +53,7 @@ def getMembersAndAssets(period):
 
 @st.cache_data
 def getQtrAdjustements(year, quarter):
-    return (dbConn.session().sql("SELECT nimble_cuna_id FROM acus_data.dues.dues_est_" + year + "_Q" + quarter).to_pandas())
+    return (dbConn.session().sql("SELECT nimble_cuna_id FROM acus_data.dues.dues_est_" + year + "_Q" + quarter +  " WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 def expandFlagDescriptions(df):
     df.loc[df['STATUS'] == 'A', 'STATUS'] = 'Active'
@@ -207,7 +207,7 @@ else:
                 st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')
 
-                q1_adjs = getQtrAdjustements('2025', '1')
+                q1_adjs = getQtrAdjustements('2025', '1', nimble_cuna_id)
                 st.markdown("**1st Quarter Adjustment Detail:**")
                 st.write(q1_adjs)
 

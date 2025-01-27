@@ -171,7 +171,7 @@ else:
                 cuna_cap_calc = "({members:,.0f} * 0.12) + (${assets:,.0f} * 0.000018) = " + str(round((prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12) + (prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] *  0.000018), 0))
                 st.markdown(cuna_cap_calc.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]], assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
 
-                txt = "For only {price:.2f} dollars!"
+                txt = "For only ${price:.0f} dollars!"
                 st.markdown(txt.format(price = 49)) 
 
 

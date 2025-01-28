@@ -33,7 +33,7 @@ def getStateNames():
 
 @st.cache_data
 def getCUName(nimble_cuna_id):
-    return (dbConn.session().sql("SELECT name FROM acus_data.core_data.core_data WHERE nimble_cuna_id='" + nimble_cuna_id + "' "))
+    return (dbConn.session().sql("SELECT name FROM acus_data.core_data.core_data WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 @st.cache_data
 def getLeagueNames():

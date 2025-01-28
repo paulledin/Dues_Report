@@ -212,6 +212,9 @@ else:
                 st.markdown("**1st Quarter Adjustment Detail:**")
                 if (len(q1_adjs) > 0):
                     st.write(q1_adjs)
+                else:
+                    q1_adjs = {"NIMBLE_CUNA_ID": [nimble_cuna_id]}
+                    #data = {"Name": ["Alice", "Bob"], "Age": [25, 30]}
 
                 st.markdown('---')
         elif (selected_report_type == 'State'):

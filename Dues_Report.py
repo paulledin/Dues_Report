@@ -211,8 +211,9 @@ else:
                 q1_adjs = getQtrAdjustements('2025', '1', nimble_cuna_id)
                 st.markdown("**1st Quarter Adjustment Detail:**")
                 if (len(q1_adjs) == 0):
-                    q1_adjs = pd.DataFrame({"NIMBLE_CUNA_ID": [nimble_cuna_id], "Name": thisCU['NAME'].loc[thisCU.index[0]]})
-                    #data = {"Name": ["Alice", "Bob"], "Age": [25, 30]}
+                    if (thisCU['STATUS'].loc[thisCU.index[0]] == 'Merged'):
+                        comments = 'Merged with:'
+                    q1_adjs = pd.DataFrame({"NIMBLE_CUNA_ID": [nimble_cuna_id], "Name": thisCU['NAME'].loc[thisCU.index[0]], "Status": thisCU['STATUS'].loc[thisCU.index[0]], "Comments": [comments]})
                 st.write(q1_adjs)
 
                 st.markdown('---')

@@ -127,7 +127,7 @@ else:
                 st.markdown('#### Credit Union')
                 st.markdown('**NIMBLE_CUNA_ID:** ' + thisCU['NIMBLE_CUNA_ID'].loc[thisCU.index[0]])
                 st.markdown('**Name:** ' + thisCU['NAME'].loc[thisCU.index[0]])
-                st.markdown('**Physical Address:** ' + thisCU['ST_ADDRESS'].loc[thisCU.index[0]] + ', ' + thisCU['ST_CITY'].loc[thisCU.index[0]] + thisCU['ST_STATE'].loc[thisCU.index[0]] + ' ' + thisCU['ST_ZIP_CODE'].loc[thisCU.index[0]])
+                st.markdown('**Physical Address:** ' + thisCU['ST_ADDRESS'].loc[thisCU.index[0]] + ', ' + thisCU['ST_CITY'].loc[thisCU.index[0]] + ' ' + thisCU['ST_STATE'].loc[thisCU.index[0]] + ', ' + thisCU['ST_ZIP_CODE'].loc[thisCU.index[0]])
                 
                 current_members = "**Current Members:**  {members:,.0f} "
                 st.markdown(current_members.format(members = thisCU['MEMBERS'].loc[thisCU.index[0]]))

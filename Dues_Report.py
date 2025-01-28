@@ -217,6 +217,7 @@ else:
                 if (len(q1_adjs) == 0):
                     if (thisCU['STATUS'].loc[thisCU.index[0]] == 'Merged'):
                         comments = 'Merged with:'
+                        survivor_id = thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]
                     q1_adjs = pd.DataFrame({"NIMBLE_CUNA_ID": [nimble_cuna_id], "Name": thisCU['NAME'].loc[thisCU.index[0]], "Status": thisCU['STATUS'].loc[thisCU.index[0]], "Comments": [comments]})
                 st.write(q1_adjs)
 

@@ -210,11 +210,10 @@ else:
 
                 q1_adjs = getQtrAdjustements('2025', '1', nimble_cuna_id)
                 st.markdown("**1st Quarter Adjustment Detail:**")
-                if (len(q1_adjs) > 0):
-                    st.write(q1_adjs)
-                else:
+                if (len(q1_adjs) == 0):
                     q1_adjs = {"NIMBLE_CUNA_ID": [nimble_cuna_id]}
                     #data = {"Name": ["Alice", "Bob"], "Age": [25, 30]}
+                st.write(q1_adjs)
 
                 st.markdown('---')
         elif (selected_report_type == 'State'):

@@ -210,7 +210,8 @@ else:
 
                 q1_adjs = getQtrAdjustements('2025', '1', nimble_cuna_id)
                 st.markdown("**1st Quarter Adjustment Detail:**")
-                st.write(q1_adjs)
+                if (q1_adjs > 0):
+                    st.write(q1_adjs)
 
                 st.markdown('---')
         elif (selected_report_type == 'State'):

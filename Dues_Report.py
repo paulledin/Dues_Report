@@ -32,10 +32,6 @@ def getStateNames():
     return (dbConn.session().sql("SELECT full_name FROM acus_data.core_data.state_codes ").to_pandas())
 
 @st.cache_data
-def getCUName(nimble_cuna_id):
-    return (dbConn.session().sql("SELECT name FROM acus_data.core_data.core_data WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
-
-@st.cache_data
 def getLeagueNames():
     return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
@@ -216,8 +212,8 @@ else:
                 st.markdown("**1st Quarter Adjustment Detail:**")
                 if (len(q1_adjs) == 0):
                     if (thisCU['STATUS'].loc[thisCU.index[0]] == 'Merged'):
-                        name = getCUName(thisCU['SURVIVOR_ID'].loc[thisCU.index[0]])
-                        st.write(name)
+                        survivor_cu = getCUData(thisCU['SURVIVOR_ID'].loc[thisCU.index[0]])
+                        st.write(survivor_cu)
                                     
                         comments = 'Merged with ' + thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]
                         survivor_id = thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]

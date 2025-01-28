@@ -215,7 +215,7 @@ else:
                         survivor_cu = getCUData(thisCU['SURVIVOR_ID'].loc[thisCU.index[0]])
                         st.write(survivor_cu)
                                     
-                        comments = 'Merged with ' + thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]
+                        comments = 'Merged with ' + survivor_cu['NAME'].loc[survivor_cu.index[0]] + ' ' + thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]
                         survivor_id = thisCU['SURVIVOR_ID'].loc[thisCU.index[0]]
                     q1_adjs = pd.DataFrame({"NIMBLE_CUNA_ID": [nimble_cuna_id], "Name": thisCU['NAME'].loc[thisCU.index[0]], "Status": thisCU['STATUS'].loc[thisCU.index[0]], "Comments": [comments]})
                 st.write(q1_adjs)

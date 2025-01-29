@@ -27,7 +27,7 @@ dbConn = st.connection("snowflake")
 def getCUData(nimble_cuna_id):
     df_cuData = dbConn.session().sql("SELECT f1.nimble_cuna_id, f1.name, f1.st_address, f1.st_city, f1.st_state, f1.st_zip_code, f1.members, f1.total_assets, f1.league_name, f1.afl, f1.status, f1.nafcu_affiliated, f1.league_affiliated, f1.survivor_id, f2.league_name_nimble FROM acus_data.core_data.core_data f1 LEFT JOIN acus_data.core_data.league_codes f2 ON f1.league_code=f2.league_code WHERE f1.nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas()
 
-    df_cuData.loc[str(df_cuData['LEAGUE_NAME']) == 'None', 'LEAGUE_NAME'] = df_cuData['LEAGUE_NAME_NIMBLE']
+    #df_cuData.loc[str(df_cuData['LEAGUE_NAME']) == 'None', 'LEAGUE_NAME'] = df_cuData['LEAGUE_NAME_NIMBLE']
 
     return (df_cuData)
 

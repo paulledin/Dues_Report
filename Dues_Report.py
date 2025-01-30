@@ -35,7 +35,7 @@ def getStateNames():
 
 @st.cache_data
 def getLeagueNames():
-    return (dbConn.session().sql("SELECT ' ', distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
+    return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
 @st.cache_data
 def getCUDuesPremlimEst(nimble_cuna_id):

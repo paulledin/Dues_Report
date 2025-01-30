@@ -99,7 +99,6 @@ else:
         else:
             nimble_cuna_id = st.text_input("NIMBLE_CUNA_ID:", "10013583")  
                 
-    
     col = st.columns((9, 1), gap='medium')
     with col[0]:
         if (selected_report_type == 'Individual CU'):
@@ -228,7 +227,7 @@ else:
         elif (selected_report_type == 'State'):
             st.markdown("**State Reports Coming Soon!!!**")
         else:
-            st.markdown("**League Reports Coming Soon!!!**")
+            st.markdown('#### 2025 Dues Calculation for - ' + selected_league)
 
 
     with col[1]:

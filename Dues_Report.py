@@ -237,6 +237,15 @@ else:
             st.markdown('#### Affiliated With America\'s Credit Unions Only/Paid To League:')
             st.markdown('---')
 
+            st.markdown('#### Collected By America\'s Credit Unions:')
+            st.markdown('---')
+
+            st.markdown('#### Affiliated With League Only:')
+            st.markdown('---')
+
+            st.markdown('#### Not Affiliated With Both America\'s Credit Unions and League:')
+            st.markdown('---')
+
 
 
 

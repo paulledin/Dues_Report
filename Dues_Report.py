@@ -148,33 +148,33 @@ else:
                     st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
                     st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
 
-                current_members = "**March 2024 Members:**  {members:,.0f} "
-                st.markdown(current_members.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]))
-                current_assets = "**March 2024 Assets:**  ${assets:,.0f} "
-                st.markdown(current_assets.format(assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
-                june_assets = "**June 2024 Assets:**  ${assets:,.0f} "
-                st.markdown(june_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
+                    current_members = "**March 2024 Members:**  {members:,.0f} "
+                    st.markdown(current_members.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]))
+                    current_assets = "**March 2024 Assets:**  ${assets:,.0f} "
+                    st.markdown(current_assets.format(assets = prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]]))
+                    june_assets = "**June 2024 Assets:**  ${assets:,.0f} "
+                    st.markdown(june_assets.format(assets = prelimDues['JUNE_ASSETS'].loc[prelimDues.index[0]]))
                 
-                cuna_dues = "**2025 Legacy CUNA Dues Est:**  ${dues:,.0f} "
-                st.markdown(cuna_dues.format(dues = prelimDues['CUNA_DUES_2025'].loc[prelimDues.index[0]]))
-                nafcu_dues = "**2025 Legacy NAFCU Dues Est:**  ${dues:,.0f} "
-                st.markdown(nafcu_dues.format(dues = prelimDues['NAFCU_DUES_2025'].loc[prelimDues.index[0]]))
+                    cuna_dues = "**2025 Legacy CUNA Dues Est:**  ${dues:,.0f} "
+                    st.markdown(cuna_dues.format(dues = prelimDues['CUNA_DUES_2025'].loc[prelimDues.index[0]]))
+                    nafcu_dues = "**2025 Legacy NAFCU Dues Est:**  ${dues:,.0f} "
+                    st.markdown(nafcu_dues.format(dues = prelimDues['NAFCU_DUES_2025'].loc[prelimDues.index[0]]))
 
-                st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
+                    st.markdown('**Formula Used:** ' + prelimDues['FORMULA'].loc[thisCU.index[0]])
                 
-                full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
-                st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
+                    full_amt = "**2025 Full Amount Due:**  ${dues:,.0f} "
+                    st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
-                expected = "**2025 Expected Dues:**  ${dues:,.0f} "
-                st.markdown(expected.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
+                    expected = "**2025 Expected Dues:**  ${dues:,.0f} "
+                    st.markdown(expected.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
 
-                num_mergers = "**Mar 2023 - Mar 2024 Mergers:**  {mergers:,.0f} "
-                st.markdown(num_mergers.format(mergers = prelimDues['NUM_MERGERS'].loc[prelimDues.index[0]]))
+                    num_mergers = "**Mar 2023 - Mar 2024 Mergers:**  {mergers:,.0f} "
+                    st.markdown(num_mergers.format(mergers = prelimDues['NUM_MERGERS'].loc[prelimDues.index[0]]))
 
-                st.markdown("**Merger Detail:**")
-                st.write(mergers)
+                    st.markdown("**Merger Detail:**")
+                    st.write(mergers)
 
-                st.markdown("**Legacy CUNA Calculation:**")
+                    st.markdown("**Legacy CUNA Calculation:**")
 
                 dues_calc = round(prelimDues['CURRENT_ASSETS'].loc[prelimDues.index[0]] * 0.000018 + prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]] * 0.12, 0)
 

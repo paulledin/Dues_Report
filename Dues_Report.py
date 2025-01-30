@@ -236,11 +236,12 @@ else:
 
             st.write(thisLgCUs)
 
-
             st.markdown('### 2025 Dues Calculation for - ' + selected_league)
             st.markdown('---')
 
             st.markdown('#### Credit Unions with Dual Membership')
+            df_dual_affiliates = thisLgCUs.loc[(thisLgCUs['AFL'] == 'A') & (thisLgCUs['LEAGUE_AFFILIATED'] == 'A')]
+            st.write(df_dual_affiliates)
             st.markdown('---')
 
             st.markdown('#### Affiliated With America\'s Credit Unions Only/Paid To League:')

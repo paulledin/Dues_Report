@@ -233,6 +233,7 @@ else:
             st.markdown("**State Reports Coming Soon!!!**")
         else:
             thisLgCUs = getCUDuesPremlimEstByLeague(selected_league)
+            st.write(len(thisLgCUs))
 
             st.write(thisLgCUs)
 
@@ -242,6 +243,7 @@ else:
             st.markdown('#### Credit Unions with Dual Membership')
             df_dual_affiliates = thisLgCUs.loc[(thisLgCUs['AFL'] == 'A') & (thisLgCUs['LEAGUE_AFFILIATED'] == 'A')]
             st.write(df_dual_affiliates)
+            st.write(len(df_dual_affiliates))
             st.markdown('---')
 
             st.markdown('#### Affiliated With America\'s Credit Unions Only/Paid To League:')

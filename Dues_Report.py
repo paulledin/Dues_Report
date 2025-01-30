@@ -234,6 +234,10 @@ else:
             st.markdown('#### Credit Unions with Dual Membership')
             st.markdown('---')
 
+            st.markdown('#### Affiliated With America\'s Credit Unions Only/Paid To League:')
+            st.markdown('---')
+
+
 
 
     with col[1]:

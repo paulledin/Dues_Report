@@ -120,7 +120,7 @@ else:
             mergers["Dues_2024"] = round(mergers["Dues_2024"], 0)
             mergers.drop(['prev_year_diff', 'MEMBERS', 'TOTAL_ASSETS', 'Dues_2023'], axis=1, inplace = True)
  
-            st.markdown('#### 2025 Dues Calculation for ' + thisCU['NAME'].loc[thisCU.index[0]])
+            st.markdown('#### 2025 Dues Calculation for - ' + thisCU['NAME'].loc[thisCU.index[0]])
             
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')

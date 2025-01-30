@@ -143,7 +143,7 @@ else:
                 st.markdown('#### Preliminary Estimate')
 
                 if (len(prelimDues) == 0):
-                    st.write('No prelim dues calculated.')
+                    st.write('No preliminary dues were calculated for this credit union because they merged/liquidated and/or didn\'t file a March NCUA Call Report.')
                 else:
                     st.write('Prelim dues caclulated....')
 

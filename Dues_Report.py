@@ -35,7 +35,7 @@ def getStateNames():
 
 @st.cache_data
 def getLeagueNames():
-    return (dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
+    return (dbConn.session().sql("SELECT ' ', distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas())
 
 @st.cache_data
 def getCUDuesPremlimEst(nimble_cuna_id):
@@ -209,7 +209,6 @@ else:
                         st.write("**=> Formula Calculated Amount is <= 105% of Last Year's Full Amount.**")
                         full_amt = "**=> 2025 Legacy CUNA Full Amount:**  ${dues:,.0f} "
                         st.markdown(full_amt.format(dues = prelimDues['FULL_AMT_2025'].loc[prelimDues.index[0]]))
-
 
                     st.markdown('---')
                 st.markdown('#### Q1 - Adjustments')

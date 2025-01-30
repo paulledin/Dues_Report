@@ -44,6 +44,10 @@ def getCUDuesPremlimEst(nimble_cuna_id):
     return (dbConn.session().sql("SELECT status, afl, league_affiliated, nafcu_affiliated, current_members, current_assets, june_assets, num_mergers, cuna_dues_2025, nafcu_dues_2025, full_amt_2025, expected_dues, formula FROM acus_data.dues.dues_est_2025 WHERE nimble_cuna_id='" + nimble_cuna_id + "' ").to_pandas())
 
 @st.cache_data
+def getCUDuesPremlimEstByLeague(league_name):
+    return (dbConn.session().sql("SELECT status, afl, league_affiliated, nafcu_affiliated, current_members, current_assets, june_assets, num_mergers, cuna_dues_2025, nafcu_dues_2025, full_amt_2025, expected_dues, formula FROM acus_data.dues.dues_est_2025 WHERE league_name='" + league_name + "' ").to_pandas())
+
+@st.cache_data
 def getMergers(survivor_id):
     return (dbConn.session().sql("SELECT nimble_cuna_id, name AS \"Name\", st_state AS \"State\", merger_date AS \"Merger_Date\" FROM acus_data.core_data.core_data WHERE merger_date>='2023-03-31' AND merger_date<='2024-03-31' AND survivor_id='" + survivor_id + "' ").to_pandas())
 
@@ -228,6 +232,9 @@ else:
         elif (selected_report_type == 'State'):
             st.markdown("**State Reports Coming Soon!!!**")
         else:
+            thisLgCUs = getCUDuesPremlimEstByLeague(selected_league)
+
+
             st.markdown('### 2025 Dues Calculation for - ' + selected_league)
             st.markdown('---')
 

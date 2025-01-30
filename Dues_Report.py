@@ -102,7 +102,6 @@ else:
     
     col = st.columns((9, 1), gap='medium')
     with col[0]:
-        st.markdown('#### 2025 Dues Calculation')
         if (selected_report_type == 'Individual CU'):
             thisCU = expandFlagDescriptions(getCUData(nimble_cuna_id))
             prelimDues = expandFlagDescriptions(getCUDuesPremlimEst(nimble_cuna_id))
@@ -121,6 +120,7 @@ else:
             mergers["Dues_2024"] = round(mergers["Dues_2024"], 0)
             mergers.drop(['prev_year_diff', 'MEMBERS', 'TOTAL_ASSETS', 'Dues_2023'], axis=1, inplace = True)
  
+            st.markdown('#### 2025 Dues Calculation for ' + thisCU['NAME'].loc[thisCU.index[0]])
             
             if(len(thisCU) == 0):
                 st.markdown('#### !! No Credit Unions Found Matching NIMBLE_CUNA_ID -> ' + nimble_cuna_id + ' !!')
@@ -231,6 +231,7 @@ else:
             st.markdown("**State Reports Coming Soon!!!**")
         else:
             st.markdown("**League Reports Coming Soon!!!**")
+
 
     with col[1]:
         st.markdown('')

@@ -142,14 +142,13 @@ else:
                 
                 st.markdown('#### Preliminary Estimate')
 
+                st.write(len(prelimDues))
+                st.write(prelimDues)
+
                 if (len(prelimDues == 0)):
                     st.write('No prelim dues calculated.')
                 else:
                     st.write('Prelim dues caclulated....')
-                st.write(len(prelimDues == 0))
-                st.write(prelimDues)
-
-
 
 
                 st.markdown('**Status:** ' + prelimDues['STATUS'].loc[thisCU.index[0]])

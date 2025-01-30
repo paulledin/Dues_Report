@@ -234,6 +234,8 @@ else:
         else:
             thisLgCUs = getCUDuesPremlimEstByLeague(selected_league)
 
+            st.write(thisLgCUs)
+
 
             st.markdown('### 2025 Dues Calculation for - ' + selected_league)
             st.markdown('---')

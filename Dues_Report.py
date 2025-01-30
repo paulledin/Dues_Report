@@ -145,7 +145,7 @@ else:
                 st.write(len(prelimDues))
                 st.write(prelimDues)
 
-                if (len(prelimDues == 0)):
+                if (len(prelimDues) == 0):
                     st.write('No prelim dues calculated.')
                 else:
                     st.write('Prelim dues caclulated....')

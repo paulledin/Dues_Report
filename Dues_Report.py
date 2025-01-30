@@ -45,7 +45,7 @@ def getCUDuesPremlimEst(nimble_cuna_id):
 
 @st.cache_data
 def getCUDuesPremlimEstByLeague(league_name):
-    return (dbConn.session().sql("SELECT status, afl, league_affiliated, nafcu_affiliated, current_members, current_assets, june_assets, num_mergers, cuna_dues_2025, nafcu_dues_2025, full_amt_2025, expected_dues, formula FROM acus_data.dues.dues_est_2025 WHERE league_name='" + league_name + "' ").to_pandas())
+    return (dbConn.session().sql("SELECT f1.nimble_cuna_id, f1.current_members, f1.current_assets, f1.june_assets, f1.full_amt_2025 FROM acus_data.dues.dues_est_2025 f1 WHERE f1.league_name='" + league_name + "' ").to_pandas())
 
 @st.cache_data
 def getMergers(survivor_id):

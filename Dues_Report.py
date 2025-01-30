@@ -150,11 +150,10 @@ else:
                 else:
                     st.write('Prelim dues caclulated....')
 
-
-                st.markdown('**Status:** ' + prelimDues['STATUS'].loc[thisCU.index[0]])
-                st.markdown('**Legacy CUNA Affiliated:** ' + prelimDues['AFL'].loc[thisCU.index[0]])
-                st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
-                st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
+                    st.markdown('**Status:** ' + prelimDues['STATUS'].loc[thisCU.index[0]])
+                    st.markdown('**Legacy CUNA Affiliated:** ' + prelimDues['AFL'].loc[thisCU.index[0]])
+                    st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
+                    st.markdown('**League Affiliated:** ' + prelimDues['LEAGUE_AFFILIATED'].loc[thisCU.index[0]])
 
                 current_members = "**March 2024 Members:**  {members:,.0f} "
                 st.markdown(current_members.format(members = prelimDues['CURRENT_MEMBERS'].loc[prelimDues.index[0]]))

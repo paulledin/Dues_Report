@@ -147,6 +147,8 @@ else:
                 else:
                     st.write('Prelim dues caclulated....')
                 st.write(len(prelimDues == 0))
+                st.write(prelimDues)
+
 
 
 

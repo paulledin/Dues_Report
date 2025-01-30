@@ -36,7 +36,7 @@ def getStateNames():
 @st.cache_data
 def getLeagueNames():
     df_league_name = dbConn.session().sql("SELECT distinct(league_name) FROM acus_data.core_data.core_data WHERE league_name IS NOT NULL AND league_name!='Alternatives FCU' AND status='A' ORDER BY league_name ").to_pandas()
-    blank_row = pd.DataFrame({"LEAGUE_NAME": ''})
+    #blank_row = pd.DataFrame({"LEAGUE_NAME": ''})
 
     #q1_adjs = pd.DataFrame({"NIMBLE_CUNA_ID": [nimble_cuna_id], "Name": thisCU['NAME'].loc[thisCU.index[0]], "Status": thisCU['STATUS'].loc[thisCU.index[0]], "Comments": [comments]})
     return (df_league_name)

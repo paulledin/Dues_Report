@@ -228,10 +228,10 @@ else:
         elif (selected_report_type == 'State'):
             st.markdown("**State Reports Coming Soon!!!**")
         else:
-            st.markdown('#### 2025 Dues Calculation for - ' + selected_league)
+            st.markdown('### 2025 Dues Calculation for - ' + selected_league)
             st.markdown('---')
 
-            st.markdown('### Credit Unions with Dual Membership')
+            st.markdown('#### Credit Unions with Dual Membership')
             st.markdown('---')
 
 

@@ -146,6 +146,10 @@ else:
                     st.write('No prelim dues calculated.')
                 else:
                     st.write('Prelim dues caclulated....')
+                st.write(len(prelimDues == 0))
+
+
+
                 st.markdown('**Status:** ' + prelimDues['STATUS'].loc[thisCU.index[0]])
                 st.markdown('**Legacy CUNA Affiliated:** ' + prelimDues['AFL'].loc[thisCU.index[0]])
                 st.markdown('**Legacy NAFCU Affiliated:** ' + prelimDues['NAFCU_AFFILIATED'].loc[thisCU.index[0]])
